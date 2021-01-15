@@ -8,6 +8,15 @@ class FormatUtil {
             return result;
         }
 
+        fun isNullString(data: String?): String{
+            return if(data.isNullOrEmpty() || data.equals("null")){
+                ""
+            }else{
+                data
+            }
+
+        }
+
     }
 
 

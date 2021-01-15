@@ -39,6 +39,20 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="List of Missions"
+        android:gravity="left"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="25dp"
+        android:textColor="#123989"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearl"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -51,7 +65,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearl">
+        app:layout_constraintTop_toBottomOf="@+id/title">
 
     </androidx.recyclerview.widget.RecyclerView>
 

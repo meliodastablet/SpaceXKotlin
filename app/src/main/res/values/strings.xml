@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">SpaceXKotlin</string>
-    <string name="mission_name">Mission Name</string>
+    <string name="mission_name">Mission Search</string>
 </resources>

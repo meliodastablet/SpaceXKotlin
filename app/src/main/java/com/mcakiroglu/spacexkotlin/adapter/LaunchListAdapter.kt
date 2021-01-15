@@ -1,5 +1,6 @@
 package com.mcakiroglu.spacexkotlin.adapter
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,9 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.mcakiroglu.spacexkotlin.R
+import com.mcakiroglu.spacexkotlin.model.LaunchDetails
 import com.mcakiroglu.spacexkotlin.model.Launches
+import com.mcakiroglu.spacexkotlin.view.LaunchDeets
 
 class LaunchListAdapter(private val data: MutableList<Launches>): RecyclerView.Adapter<LaunchListAdapter.ViewHolder>(), View.OnClickListener {
     override fun onCreateViewHolder(
@@ -46,8 +49,11 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = v!!.findViewById(R.id.textView)
         if(v.id == R.id.constLayout){
             for (item in data){
-                if(item.missionName!!.toLowerCase().contains(tvName.text.toString())){
-                   //TODO
+                if(item.missionName!!.toLowerCase().contains(tvName.text.toString().toLowerCase())){
+                    val intent = Intent(v.context, LaunchDeets::class.java).apply {
+                        putExtra("flightnum", item.flightNumber.toString())
+                    }
+                    v.context.startActivity(intent)
                 }
             }
         }
